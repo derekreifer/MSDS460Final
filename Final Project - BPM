@@ -1,0 +1,586 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov 14 17:49:08 2020
+
+@author: derekreifer
+"""
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov 14 15:29:33 2020
+
+@author: derekreifer
+"""
+
+#!/usr/bin/env python3.7
+
+# Copyright 2020, Gurobi Optimization, LLC
+
+# This example formulates and solves the following simple MIP model:
+#  maximize
+#        x +   y + 2 z
+#  subject to
+#        x + 2 y + 3 z <= 4
+#        x +   y       >= 1
+#        x, y, z binary
+
+import gurobipy as gp
+from gurobipy import GRB
+
+try:
+
+    # Create a new model
+    model = gp.Model("mip1")
+
+    # Create variables
+    a = model.addVar(vtype=GRB.INTEGER, name="a")
+    b = model.addVar(vtype=GRB.INTEGER, name="b")
+    c = model.addVar(vtype=GRB.INTEGER, name="c")
+    d = model.addVar(vtype=GRB.INTEGER, name="d")
+    e = model.addVar(vtype=GRB.INTEGER, name="e")
+    f = model.addVar(vtype=GRB.INTEGER, name="f")
+    g = model.addVar(vtype=GRB.INTEGER, name="g")
+    h = model.addVar(vtype=GRB.INTEGER, name="h")
+    i = model.addVar(vtype=GRB.INTEGER, name="i")
+    j = model.addVar(vtype=GRB.INTEGER, name="j")
+    k = model.addVar(vtype=GRB.INTEGER, name="k")
+    l = model.addVar(vtype=GRB.INTEGER, name="l")
+    m = model.addVar(vtype=GRB.INTEGER, name="m")
+    n = model.addVar(vtype=GRB.INTEGER, name="n")
+    o = model.addVar(vtype=GRB.INTEGER, name="o")
+    p = model.addVar(vtype=GRB.INTEGER, name="p")
+    q = model.addVar(vtype=GRB.INTEGER, name="q")
+    r = model.addVar(vtype=GRB.INTEGER, name="r")
+    s = model.addVar(vtype=GRB.INTEGER, name="s")
+    t = model.addVar(vtype=GRB.INTEGER, name="t")
+    aa = model.addVar(vtype=GRB.INTEGER, name="aa")
+    bb = model.addVar(vtype=GRB.INTEGER, name="bb")
+    cc = model.addVar(vtype=GRB.INTEGER, name="cc")
+    dd = model.addVar(vtype=GRB.INTEGER, name="dd")
+    ee = model.addVar(vtype=GRB.INTEGER, name="ee")
+    ff = model.addVar(vtype=GRB.INTEGER, name="ff")
+    gg = model.addVar(vtype=GRB.INTEGER, name="gg")
+    hh = model.addVar(vtype=GRB.INTEGER, name="hh")
+    ii = model.addVar(vtype=GRB.INTEGER, name="ii")
+    jj = model.addVar(vtype=GRB.INTEGER, name="jj")
+    kk = model.addVar(vtype=GRB.INTEGER, name="kk")
+    ll = model.addVar(vtype=GRB.INTEGER, name="ll")
+    mm = model.addVar(vtype=GRB.INTEGER, name="mm")
+    nn = model.addVar(vtype=GRB.INTEGER, name="nn")
+    oo = model.addVar(vtype=GRB.INTEGER, name="oo")
+    pp = model.addVar(vtype=GRB.INTEGER, name="pp")
+    qq = model.addVar(vtype=GRB.INTEGER, name="qq")
+    rr = model.addVar(vtype=GRB.INTEGER, name="rr")
+    ss = model.addVar(vtype=GRB.INTEGER, name="ss")
+    tt = model.addVar(vtype=GRB.INTEGER, name="tt")
+    
+    x1 = model.addVar(vtype=GRB.BINARY, name="x1")
+    x2 = model.addVar(vtype=GRB.BINARY, name="x2")
+    x3 = model.addVar(vtype=GRB.BINARY, name="x3")
+    x4 = model.addVar(vtype=GRB.BINARY, name="x4")
+    x5 = model.addVar(vtype=GRB.BINARY, name="x5")
+    x6 = model.addVar(vtype=GRB.BINARY, name="x6")
+    x7 = model.addVar(vtype=GRB.BINARY, name="x7")
+    x8 = model.addVar(vtype=GRB.BINARY, name="x8")
+    x9 = model.addVar(vtype=GRB.BINARY, name="x9")
+    x10 = model.addVar(vtype=GRB.BINARY, name="x10")
+    x11 = model.addVar(vtype=GRB.BINARY, name="x11")
+    x12 = model.addVar(vtype=GRB.BINARY, name="x12")
+    x13 = model.addVar(vtype=GRB.BINARY, name="x13")
+    x14 = model.addVar(vtype=GRB.BINARY, name="x14")
+    x15 = model.addVar(vtype=GRB.BINARY, name="x15")
+    x16 = model.addVar(vtype=GRB.BINARY, name="x16")
+    x17 = model.addVar(vtype=GRB.BINARY, name="x17")
+    x18 = model.addVar(vtype=GRB.BINARY, name="x18")
+    x19 = model.addVar(vtype=GRB.BINARY, name="x19")
+    x20 = model.addVar(vtype=GRB.BINARY, name="x20")
+    x21 = model.addVar(vtype=GRB.BINARY, name="x21")
+    x22 = model.addVar(vtype=GRB.BINARY, name="x22")
+    x23 = model.addVar(vtype=GRB.BINARY, name="x23")
+    x24 = model.addVar(vtype=GRB.BINARY, name="x24")
+    x25 = model.addVar(vtype=GRB.BINARY, name="x25")
+    x26 = model.addVar(vtype=GRB.BINARY, name="x26")
+    x27 = model.addVar(vtype=GRB.BINARY, name="x27")
+    x28 = model.addVar(vtype=GRB.BINARY, name="x28")
+    x29 = model.addVar(vtype=GRB.BINARY, name="x29")
+    x30 = model.addVar(vtype=GRB.BINARY, name="x30")
+    x31 = model.addVar(vtype=GRB.BINARY, name="x31")
+    x32 = model.addVar(vtype=GRB.BINARY, name="x32")
+    x33 = model.addVar(vtype=GRB.BINARY, name="x33")
+    x34 = model.addVar(vtype=GRB.BINARY, name="x34")
+    x35 = model.addVar(vtype=GRB.BINARY, name="x35")
+    x36 = model.addVar(vtype=GRB.BINARY, name="x36")
+    x37 = model.addVar(vtype=GRB.BINARY, name="x37")
+    x38 = model.addVar(vtype=GRB.BINARY, name="x38")
+    x39 = model.addVar(vtype=GRB.BINARY, name="x39")
+    x40 = model.addVar(vtype=GRB.BINARY, name="x40")
+
+    # Set objective
+    model.setObjective(-0.3*a 
+                   - 4.3*b 
+                   + 0*c 
+                   - 3.2*d 
+                   - 6.1*e 
+                   - 4.2*f  
+                   - 3*g 
+                   + 3*h 
+                   - 8.9*i 
+                   - 1*j 
+                   - 1.1*k 
+                   - 2.8*l 
+                   - 7.1*m 
+                   + 2.3*n 
+                   - 0.8*o 
+                   - 0.5*p 
+                   + 3.2*q 
+                   + 0.1*r 
+                   + 3.1*s 
+                   - 3.7*t
+                   - 1.5*aa 
+                   - 1.4*bb 
+                   + 0.5*cc 
+                   - 2.9*dd 
+                   - 3*ee 
+                   + 1.6*ff  
+                   + 0.5*gg 
+                   - 0.8*hh 
+                   + 0.8*ii 
+                   - 1.6*jj 
+                   + 0.9*kk 
+                   + 0.6*ll 
+                   - 2.1*mm 
+                   + 0.5*nn 
+                   - 7.5*oo 
+                   + 2.9*pp 
+                   - 1.1*qq 
+                   + 2.2*rr 
+                   - 0.6*ss 
+                   + 0.1*tt, GRB.MAXIMIZE)
+
+    # Add constraint: 15 players on active roster (+ draft pick)
+    model.addConstr(x1
+                + x2
+                + x3
+                + x4
+                + x5
+                + x6
+                + x7 
+                + x8
+                + x9
+                + x10
+                + x11
+                + x12
+                + x13
+                + x14
+                + x15
+                + x16
+                + x17 
+                + x18
+                + x19
+                + x20
+                + x20
+                + x21
+                + x22
+                + x23
+                + x24
+                + x25
+                + x26
+                + x27 
+                + x28
+                + x29
+                + x30
+                + x30
+                + x31
+                + x32
+                + x33
+                + x34
+                + x35
+                + x36
+                + x37 
+                + x38
+                + x39
+                + x40 <= 14
+                , "c0")
+        
+    model.addConstr(x1
+                + x2
+                + x3
+                + x4
+                + x5
+                + x6
+                + x7 
+                + x8
+                + x9
+                + x10
+                + x11
+                + x12
+                + x13
+                + x14
+                + x15
+                + x16
+                + x17 
+                + x18
+                + x19
+                + x20
+                + x20
+                + x21
+                + x22
+                + x23
+                + x24
+                + x25
+                + x26
+                + x27 
+                + x28
+                + x29
+                + x30
+                + x30
+                + x31
+                + x32
+                + x33
+                + x34
+                + x35
+                + x36
+                + x37 
+                + x38
+                + x39
+                + x40 >= 14
+                , "c100")
+
+    # Add constraint: 12 players can play in a game
+#    model.addConstr((a/(a+0.01))
+#                + (b/(b+0.01))
+#                + (c/(c+0.01))
+#                + (d/(d+0.01))
+#                + (e/(e+0.01))
+#                + (f/(f+0.01))
+#                + (g/(g+0.01))
+#                + (h/(h+0.01))
+#                + (i/(i+0.01))
+#                + (j/(j+0.01))
+#                + (k/(k+0.01))
+#                + (l/(l+0.01))
+#                + (m/(m+0.01))
+#                + (n/(n+0.01))
+#                + (o/(o+0.01))
+#                + (p/(p+0.01))
+#                + (q/(q+0.01))
+#                + (r/(r+0.01))
+#                + (s/(s+0.01))
+#                + (t/(t+0.01))
+#                + (aa/(aa+0.01))
+#                + (bb/(bb+0.01))
+#                + (cc/(cc+0.01))
+#                + (dd/(dd+0.01))
+#                + (ee/(ee+0.01))
+#                + (ff/(ff+0.01))
+#                + (gg/(gg+0.01))
+#                + (hh/(hh+0.01))
+#                + (ii/(ii+0.01))
+#                + (jj/(jj+0.01))
+#                + (kk/(kk+0.01))
+#                + (ll/(ll+0.01))
+#                + (mm/(mm+0.01))
+#                + (nn/(nn+0.01))
+#                + (oo/(oo+0.01))
+#                + (pp/(pp+0.01))
+#                + (qq/(qq+0.01))
+#                + (rr/(rr+0.01))
+#                + (ss/(ss+0.01))
+#                + (tt/(tt+0.01)) <= 12
+#                , "c1")
+
+    # Add constraints: players can only play of on roster
+    model.addConstr(1000000*x1 >= a, "c2")
+    model.addConstr(1000000*x2 >= b, "c3")
+    model.addConstr(1000000*x3 >= c, "c4")
+    model.addConstr(1000000*x4 >= d, "c5")
+    model.addConstr(1000000*x5 >= e, "c6")
+    model.addConstr(1000000*x6 >= f, "c7")
+    model.addConstr(1000000*x7 >= g, "c8")
+    model.addConstr(1000000*x8 >= h, "c9")
+    model.addConstr(1000000*x9 >= i, "c10")
+    model.addConstr(1000000*x10 >= j, "c11")
+    model.addConstr(1000000*x11 >= k, "c12")
+    model.addConstr(1000000*x12 >= l, "c13")
+    model.addConstr(1000000*x13 >= m, "c14")
+    model.addConstr(1000000*x14 >= n, "c15")
+    model.addConstr(1000000*x15 >= o, "c16")
+    model.addConstr(1000000*x16 >= p, "c17")
+    model.addConstr(1000000*x17 >= q, "c18")
+    model.addConstr(1000000*x18 >= r, "c19")
+    model.addConstr(1000000*x19 >= s, "c20")
+    model.addConstr(1000000*x20 >= t, "c21")
+    model.addConstr(1000000*x21 >= aa, "c22")
+    model.addConstr(1000000*x22 >= bb, "c23")
+    model.addConstr(1000000*x23 >= cc, "c24")
+    model.addConstr(1000000*x24 >= dd, "c25")
+    model.addConstr(1000000*x25 >= ee, "c26")
+    model.addConstr(1000000*x26 >= ff, "c27")
+    model.addConstr(1000000*x27 >= gg, "c28")
+    model.addConstr(1000000*x28 >= hh, "c29")
+    model.addConstr(1000000*x29 >= ii, "c30")
+    model.addConstr(1000000*x30 >= jj, "c31")
+    model.addConstr(1000000*x31 >= kk, "c32")
+    model.addConstr(1000000*x32 >= ll, "c33")
+    model.addConstr(1000000*x33 >= mm, "c34")
+    model.addConstr(1000000*x34 >= nn, "c35")
+    model.addConstr(1000000*x35 >= oo, "c36")
+    model.addConstr(1000000*x36 >= pp, "c37")
+    model.addConstr(1000000*x37 >= qq, "c38")
+    model.addConstr(1000000*x38 >= rr, "c39")
+    model.addConstr(1000000*x39 >= ss, "c40")
+    model.addConstr(1000000*x40 >= tt, "c41")
+    
+    # Add constraint: salaries must fit under cap
+    model.addConstr(18900000*x1
+                + 8231760*x2
+                + 8000000*x3
+                + 6176578*x4
+                + 5686677*x5
+                + 4588680*x6
+                + 4200000*x7
+                + 1663861*x8
+                + 1517981*x9
+                + 15750000*x10
+                + 10290000*x11
+                + 8195122*x12
+                + 1701593*x13
+                + 20000000*x14
+                + 6000000*x15
+                + 16000000*x16
+                + 16000000*x17
+                + 2000000*x18
+                + 12000000*x19
+                + 6000000*x20
+                + 8000000*x21
+                + 6000000*x21
+                + 6000000*x23
+                + 6000000*x24
+                + 6000000*x25
+                + 6000000*x26
+                + 4000000*x27
+                + 6000000*x28
+                + 6000000*x29
+                + 4000000*x30
+                + 14000000*x31
+                + 8000000*x32
+                + 6000000*x33
+                + 4000000*x34
+                + 4000000*x35
+                + 12000000*x36
+                + 8000000*x37
+                + 8000000*x38
+                + 6000000*x39
+                + 4000000*x40<= 110137960 , "c42")
+
+    # Add constraint: total minutes played per game (including draft pick
+    model.addConstr(a
+                + b
+                + c
+                + d
+                + e
+                + f
+                + g
+                + h
+                + i
+                + j
+                + k
+                + l
+                + m
+                + n
+                + o
+                + p
+                + q
+                + r
+                + s
+                + t
+                + aa
+                + bb
+                + cc
+                + dd
+                + ee
+                + ff
+                + gg
+                + hh
+                + ii
+                + jj
+                + kk
+                + ll
+                + mm
+                + nn
+                + oo
+                + pp
+                + qq
+                + rr
+                + ss
+                + tt <= 225, "c43")
+    
+     # Add constraint: total minutes played per game (including draft pick
+    model.addConstr(a
+                + b
+                + c
+                + d
+                + e
+                + f
+                + g
+                + h
+                + i
+                + j
+                + k
+                + l
+                + m
+                + n
+                + o
+                + p
+                + q
+                + r
+                + s
+                + t
+                + aa
+                + bb
+                + cc
+                + dd
+                + ee
+                + ff
+                + gg
+                + hh
+                + ii
+                + jj
+                + kk
+                + ll
+                + mm
+                + nn
+                + oo
+                + pp
+                + qq
+                + rr
+                + ss
+                + tt >= 225, "c101")
+    
+    # Add constraint: players must not exceed 36 minutes per game
+    model.addConstr(a <= 36, "c82")
+    model.addConstr(b <= 36, "c83")
+    model.addConstr(c <= 36, "c44")
+    model.addConstr(d <= 36, "c45")
+    model.addConstr(e <= 36, "c46")
+    model.addConstr(f <= 36, "c47")
+    model.addConstr(g <= 36, "c48")
+    model.addConstr(h <= 36, "c49")
+    model.addConstr(i <= 36, "c50")
+    model.addConstr(j <= 36, "c51")
+    model.addConstr(k <= 36, "c52")
+    model.addConstr(l <= 36, "c53")
+    model.addConstr(m <= 36, "c54")
+    model.addConstr(n <= 36, "c55")
+    model.addConstr(o <= 36, "c56")
+    model.addConstr(p <= 36, "c57")
+    model.addConstr(q <= 36, "c58")
+    model.addConstr(r <= 36, "c59")
+    model.addConstr(s <= 36, "c60")
+    model.addConstr(t <= 36, "c61")
+    model.addConstr(aa <= 36, "c62")
+    model.addConstr(bb <= 36, "c63")
+    model.addConstr(cc <= 36, "c64")
+    model.addConstr(dd <= 36, "c65")
+    model.addConstr(ee <= 36, "c66")
+    model.addConstr(ff <= 36, "c67")
+    model.addConstr(gg <= 36, "c68")
+    model.addConstr(hh <= 36, "c69")
+    model.addConstr(ii <= 36, "c70")
+    model.addConstr(jj <= 36, "c71")
+    model.addConstr(kk <= 36, "c72")
+    model.addConstr(ll <= 36, "c73")
+    model.addConstr(mm <= 36, "c74")
+    model.addConstr(nn <= 36, "c75")
+    model.addConstr(oo <= 36, "c76")
+    model.addConstr(pp <= 36, "c77")
+    model.addConstr(qq <= 36, "c78")
+    model.addConstr(rr <= 36, "c79")
+    model.addConstr(ss <= 36, "c80")
+    model.addConstr(tt <= 36, "c81")
+    
+    # Certain players have guaranteed contracts
+    model.addConstr(x1 >= 1, "c82")
+    model.addConstr(x2 >= 1, "c83")
+    model.addConstr(x3 >= 1, "c84")
+    model.addConstr(x4 >= 1, "c85")
+    model.addConstr(x5 >= 1, "c86")
+    model.addConstr(x6 >= 1, "c87")
+    model.addConstr(x7 >= 1, "c88")
+    
+    # Bigs shouldn't play more than 1/5 of the total minutes
+    model.addConstr(a
+                    + j
+                    + k 
+                    + h 
+                    + ll
+                    + mm
+                    + pp
+                    + s
+                    + qq
+                    + rr
+                    + ss
+                    + tt<= 48, "c89")
+    
+    # Wings shouldn't play more than 2/5 of the total minutes
+    model.addConstr(b 
+                    + f
+                    + i
+                    + p 
+                    + ee 
+                    + ff
+                    + gg 
+                    + q
+                    + hh 
+                    + ii
+                    + jj
+                    + kk
+                    + r
+                    + t
+                    + nn
+                    + oo<= 96, "c90")
+    
+    # Guards shouldn't play more than 2/5 of the total minutes
+    model.addConstr(l
+                    + c 
+                    + d
+                    + e
+                    + g
+                    + m
+                    + n
+                    + aa 
+                    + bb
+                    + cc 
+                    + o
+                    + dd<= 96, "c91")
+    
+    # Prioritize youth: RJ Barrett
+    model.addConstr(b >= 15, "c92")
+    
+    # Prioritize youth: Frank Ntilikina
+    model.addConstr(d >= 15, "c93")
+    
+    # Prioritize youth: Dennis Smith Jr
+    model.addConstr(e >= 15, "c94")
+    
+    # Prioritize youth: Kevin Knox
+    model.addConstr(f >= 15, "c95")
+    
+    # Prioritize youth: Mitchell Robinson
+    model.addConstr(h >= 15, "c96")
+    
+    # Optimize model
+    model.optimize()
+
+    for v in model.getVars():
+        print('%s %g' % (v.varName, v.x))
+
+    print('Obj: %g' % model.objVal)
+
+except gp.GurobiError as e:
+    print('Error code ' + str(e.errno) + ': ' + str(e))
+
+except AttributeError:
+    print('Encountered an attribute error')
